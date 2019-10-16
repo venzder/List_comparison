@@ -1,5 +1,10 @@
-list1 = ['AAA', 'BAA', 'AAB', 'BAB', 'BBB', 'DAA']
-list2 = ['AAB', 'AAA', 'BAA', 'BBB', 'ABA']
+import random
+from datetime import datetime
+
+
+list1 = [random.randint(10000000000000000000, 10000000000000000500) for i in range(1000)]
+list2 = [random.randint(10000000000000000000, 10000000000000000500) for i in range(1000)]
+start = datetime.now().timestamp()
 i = 0
 while i < max(len(list1), len(list2)):
     if i < len(list1):
@@ -22,3 +27,5 @@ for ind1, item1 in enumerate(list1):
                 print(f'Элемент {item2} остался на своем месте')
             else:
                 print(f'элемент {item1} с индекса {ind1} переместился на индекс {ind2}')
+finish = datetime.now().timestamp()
+print(finish - start)
