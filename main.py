@@ -1,15 +1,19 @@
 list1 = ['AAA', 'BAA', 'AAB', 'BAB', 'BBB', 'DAA']
 list2 = ['AAB', 'AAA', 'BAA', 'BBB', 'ABA']
-for i in list1:
-    if i in list2:
-        pass
-    else:
-        print(f'в списке list2 отсутствуйт элемент {i}')
-for i in list2:
-    if i in list1:
-        pass
-    else:
-        print(f'в список list2 добавлен элемент {i}')
+i = 0
+while i < max(len(list1), len(list2)):
+    if i < len(list1):
+        if list1[i] in list2:
+            pass
+        else:
+            print(f'в списке list2 отсутствуйт элемент {list1[i]}')
+    if i < len(list2):
+        if list2[i] in list1:
+            pass
+        else:
+            print(f'в список list2 добавлен элемент {list2[i]}')
+    i += 1
+
 
 for ind1, item1 in enumerate(list1):
     for ind2, item2 in enumerate(list2):
